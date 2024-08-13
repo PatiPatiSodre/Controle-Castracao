@@ -1,5 +1,5 @@
 <?php
-include('../includes/conexao.php');
+include('../include/conexao.php');
 $id = $_GET['id'];
 $sql = "SELECT * FROM animal WHERE id=$id";
 $result = mysqli_query($con, $sql);
@@ -12,8 +12,8 @@ $row = mysqli_fetch_array($result);
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/cadastro.css" />
+    <link rel="stylesheet" href="../css/Style.css" />
+    <link rel="stylesheet" href="../css/Cadastro.css" />
     <title>Altera Animal</title>
 </head>
 
@@ -24,27 +24,27 @@ $row = mysqli_fetch_array($result);
             <ul>
                 <li><a href="#">Cidade</a>
                     <ul>
-                        <li><a href="../Cidade/CadastroCidade.html">Cadastrar</a></li>
-                        <li><a href="../Cidade/ListarCidade.php">Visualizar</a></li>
+                        <li><a href="../Cidade/Cadastro-Cidade.html">Cadastrar</a></li>
+                        <li><a href="../Cidade/Listar-Cidade.php">Visualizar</a></li>
                     </ul>
                 </li>
                 <li><a href="">Pessoa</a>
                     <ul>
                         <li>
-                            <a href="../Pessoa/CadastroPessoa.php">Cadastrar</a>
+                            <a href="../Pessoa/Cadastro-Pessoa.php">Cadastrar</a>
                         </li>
                         <li>
-                            <a href="../Pessoa/ListarPessoa.php">Visualizar</a>
+                            <a href="../Pessoa/Listar-Pessoa.php">Visualizar</a>
                         </li>
                     </ul>
                 </li>
                 <li><a href="">Animal</a>
                     <ul>
                         <li>
-                            <a href="../Animal/CadastroAnimal.php">Cadastrar</a>
+                            <a href="../Animal/Cadastro-Animal.php">Cadastrar</a>
                         </li>
                         <li>
-                            <a href="../Animal/ListarAnimal.php">Visualizar</a>
+                            <a href="../Animal/Listar-Animal.php">Visualizar</a>
                         </li>
                     </ul>
                 </li>
@@ -54,7 +54,7 @@ $row = mysqli_fetch_array($result);
     <section>
         <div class="principal box">
             <h2>Alteração de Animal</h2>
-            <form action="AlteraAnimalExe.php" method="post">
+            <form action="Altera-AnimalExe.php" method="post">
                 <div>
                     <label for="nome">Nome</label>
                     <input type="text" name="nome" id="nome" value="<?php echo $row['nome'] ?>" />
@@ -79,7 +79,7 @@ $row = mysqli_fetch_array($result);
                 <div><label for="pessoa">Pessoa</label>
                     <select name="pessoa" id="pessoa">
                         <?php
-                        include('../includes/conexao.php');
+                        include('../include/conexao.php');
                         $sql = "SELECT * FROM pessoa";
                         $result = mysqli_query($con, $sql);
                         while ($rowPessoa = mysqli_fetch_array($result)) {
