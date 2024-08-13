@@ -1,5 +1,5 @@
 <?php
-include('../includes/conexao.php');
+include('../include/conexao.php');
 $id = $_POST['id'];
 $nome = $_POST['nome'];
 $especie = $_POST['especie'];
@@ -9,14 +9,14 @@ $castrado = $_POST['castrado'] == "sim" ? 1 : 0;
 $pessoa = $_POST['pessoa'];
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/deletar.css" />
+    <link rel="stylesheet" href="../css/Style.css" />
+    <link rel="stylesheet" href="../css/Deletar.css" />
     <title>Resultado</title>
 </head>
 
@@ -27,27 +27,27 @@ $pessoa = $_POST['pessoa'];
             <ul>
                 <li><a href="#">Cidade</a>
                     <ul>
-                        <li><a href="../Cidade/CadastroCidade.html">Cadastrar</a></li>
-                        <li><a href="../Cidade/ListarCidade.php">Visualizar</a></li>
+                        <li><a href="../Cidade/Cadastro-Cidade.html">Cadastrar</a></li>
+                        <li><a href="../Cidade/Listar-Cidade.php">Visualizar</a></li>
                     </ul>
                 </li>
                 <li><a href="">Pessoa</a>
                     <ul>
                         <li>
-                            <a href="../Pessoa/CadastroPessoa.php">Cadastrar</a>
+                            <a href="../Pessoa/Cadastro-Pessoa.php">Cadastrar</a>
                         </li>
                         <li>
-                            <a href="../Pessoa/ListarPessoa.php">Visualizar</a>
+                            <a href="../Pessoa/Listar-Pessoa.php">Visualizar</a>
                         </li>
                     </ul>
                 </li>
                 <li><a href="">Animal</a>
                     <ul>
                         <li>
-                            <a href="../Animal/CadastroAnimal.php">Cadastrar</a>
+                            <a href="../Animal/Cadastro-Animal.php">Cadastrar</a>
                         </li>
                         <li>
-                            <a href="../Animal/ListarAnimal.php">Visualizar</a>
+                            <a href="../Animal/Listar-Animal.php">Visualizar</a>
                         </li>
                     </ul>
                 </li>
