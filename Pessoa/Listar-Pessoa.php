@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/listagem.css">
+    <link rel="stylesheet" href="../CSS/Style.css">
+    <link rel="stylesheet" href="../CSS/Listar.css">
     <title>Lista Pessoas</title>
 </head>
 
@@ -17,27 +17,27 @@
             <ul>
                 <li><a href="#">Cidade</a>
                     <ul>
-                        <li><a href="../Cidade/CadastroCidade.html">Cadastrar</a></li>
-                        <li><a href="../Cidade/ListarCidade.php">Visualizar</a></li>
+                        <li><a href="../Cidade/Cadastro-Cidade.html">Cadastrar</a></li>
+                        <li><a href="../Cidade/Listar-Cidade.php">Visualizar</a></li>
                     </ul>
                 </li>
                 <li><a href="">Pessoa</a>
                     <ul>
                         <li>
-                            <a href="../Pessoa/CadastroPessoa.php">Cadastrar</a>
+                            <a href="../Pessoa/Cadastro-Pessoa.php">Cadastrar</a>
                         </li>
                         <li>
-                            <a href="../Pessoa/ListarPessoa.php">Visualizar</a>
+                            <a href="../Pessoa/Listar-Pessoa.php">Visualizar</a>
                         </li>
                     </ul>
                 </li>
                 <li><a href="">Animal</a>
                     <ul>
                         <li>
-                            <a href="../Animal/CadastroAnimal.php">Cadastrar</a>
+                            <a href="../Animal/Cadastro-Animal.php">Cadastrar</a>
                         </li>
                         <li>
-                            <a href="../Animal/ListarAnimal.php">Visualizar</a>
+                            <a href="../Animal/Listar-Animal.php">Visualizar</a>
                         </li>
                     </ul>
                 </li>
@@ -47,7 +47,7 @@
     <section>
         <div class="principal flex inverter_column">
             <?php
-            include('../includes/conexao.php');
+            include('../include/conexao.php');
             $sql = "SELECT pes.id, pes.nome nomepessoa, pes.email, pes.endereco, pes.bairro, pes.cep, cid.nome nomecidade, cid.estado FROM pessoa pes LEFT JOIN cidade cid ON cid.id = pes.id_cidade";
             // Executa a consulta
             $result = mysqli_query($con, $sql);
@@ -80,8 +80,8 @@
                         echo "<td>" . $row['cep'] . "</td>";
                         echo "<td>" . $row['nomecidade'] . "</td>";
                         echo "<td>" . $row['estado'] . "</td>";
-                        echo "<td><a href='alteraPessoa.php?id=" . $row['id'] . "'>Alterar</a></td>";
-                        echo "<td><a href='deletaPessoa.php?id=" . $row['id'] . "'>Deletar</a></td>";
+                        echo "<td><a href='Altera-Pessoa.php?id=" . $row['id'] . "'>Alterar</a></td>";
+                        echo "<td><a href='Deleta-Pessoa.php?id=" . $row['id'] . "'>Deletar</a></td>";
                         echo "</tr>";
                     }
                     ?>
