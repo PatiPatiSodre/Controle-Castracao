@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/cadastro.css" />
+    <link rel="stylesheet" href="../CSS/Style.css" />
+    <link rel="stylesheet" href="../CSS/Cadastro.css" />
     <title>Cadastro Animal</title>
 </head>
 
@@ -17,27 +17,27 @@
             <ul>
                 <li><a href="#">Cidade</a>
                     <ul>
-                        <li><a href="../Cidade/CadastroCidade.html">Cadastrar</a></li>
-                        <li><a href="../Cidade/ListarCidade.php">Visualizar</a></li>
+                        <li><a href="../Cidade/Cadastro-Cidade.html">Cadastrar</a></li>
+                        <li><a href="../Cidade/Listar-Cidade.php">Visualizar</a></li>
                     </ul>
                 </li>
                 <li><a href="">Pessoa</a>
                     <ul>
                         <li>
-                            <a href="../Pessoa/CadastroPessoa.php">Cadastrar</a>
+                            <a href="../Pessoa/Cadastro-Pessoa.php">Cadastrar</a>
                         </li>
                         <li>
-                            <a href="../Pessoa/ListarPessoa.php">Visualizar</a>
+                            <a href="../Pessoa/Listar-Pessoa.php">Visualizar</a>
                         </li>
                     </ul>
                 </li>
                 <li><a href="">Animal</a>
                     <ul>
                         <li>
-                            <a href="../Animal/CadastroAnimal.php">Cadastrar</a>
+                            <a href="../Animal/Cadastro-Animal.php">Cadastrar</a>
                         </li>
                         <li>
-                            <a href="../Animal/ListarAnimal.php">Visualizar</a>
+                            <a href="../Animal/Listar-Animal.php">Visualizar</a>
                         </li>
                     </ul>
                 </li>
@@ -47,7 +47,7 @@
     <section>
         <div class="principal box">
             <h2>Cadastro de Animal</h2>
-            <form action="./CadastroAnimalExe.php" method="post">
+            <form action="./Cadastro-AnimalExe.php" method="post">
                 <div>
                     <label for="nome">Nome</label>
                     <input type="text" name="nome" id="nome" />
@@ -72,7 +72,7 @@
                 <div><label for="pessoa">Pessoa</label>
                     <select name="pessoa" id="pessoa">
                         <?php
-                        include('../includes/conexao.php');
+                        include('../include/conexao.php');
                         $sql = "SELECT * FROM pessoa";
                         $result = mysqli_query($con, $sql);
                         while ($row = mysqli_fetch_array($result)) {
