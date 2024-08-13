@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/listagem.css">
+    <link rel="stylesheet" href="../CSS/Style.css">
+    <link rel="stylesheet" href="../CSS/Listar.css">
     <title>Lista dos Animais</title>
 </head>
 
@@ -17,27 +17,27 @@
             <ul>
                 <li><a href="#">Cidade</a>
                     <ul>
-                        <li><a href="../Cidade/CadastroCidade.html">Cadastrar</a></li>
-                        <li><a href="../Cidade/ListarCidade.php">Visualizar</a></li>
+                        <li><a href="../Cidade/Cadastro-Cidade.html">Cadastrar</a></li>
+                        <li><a href="../Cidade/Listar-Cidade.php">Visualizar</a></li>
                     </ul>
                 </li>
                 <li><a href="">Pessoa</a>
                     <ul>
                         <li>
-                            <a href="../Pessoa/CadastroPessoa.php">Cadastrar</a>
+                            <a href="../Pessoa/Cadastro-Pessoa.php">Cadastrar</a>
                         </li>
                         <li>
-                            <a href="../Pessoa/ListarPessoa.php">Visualizar</a>
+                            <a href="../Pessoa/Listar-Pessoa.php">Visualizar</a>
                         </li>
                     </ul>
                 </li>
                 <li><a href="">Animal</a>
                     <ul>
                         <li>
-                            <a href="../Animal/CadastroAnimal.php">Cadastrar</a>
+                            <a href="../Animal/Cadastro-Animal.php">Cadastrar</a>
                         </li>
                         <li>
-                            <a href="../Animal/ListarAnimal.php">Visualizar</a>
+                            <a href="../Animal/Listar-Animal.php">Visualizar</a>
                         </li>
                     </ul>
                 </li>
@@ -47,7 +47,7 @@
     <section>
         <div class="principal flex inverter_column">
             <?php
-            include('../includes/conexao.php');
+            include('../include/conexao.php');
             $sql ="SELECT FLOOR(datediff(curdate(), data_nascimento) / 365) as idade, ani.id, ani.nome nomeAnimal, ani.especie,ani.raca, ani.data_nascimento, ani.castrado, don.nome nomeDono, don.email FROM animal ani LEFT JOIN pessoa don ON don.id = ani.id_pessoa";
             // Executa a consulta
             $result = mysqli_query($con, $sql);
@@ -86,8 +86,8 @@
                         echo "<td>" . $row['idade'] . " anos </td>";
                         echo "<td>" . $castrado . "</td>";
                         echo "<td>" . $row['nomeDono'] . "/" . $row['email'] . "</td>";
-                        echo "<td><a href='alteraAnimal.php?id=" . $row['id'] . "'>Alterar</a></td>";
-                        echo "<td><a href='deletaAnimal.php?id=" . $row['id'] . "'>Deletar</a></td>";
+                        echo "<td><a href='altera-Animal.php?id=" . $row['id'] . "'>Alterar</a></td>";
+                        echo "<td><a href='deleta-Animal.php?id=" . $row['id'] . "'>Deletar</a></td>";
                         echo "</tr>";
                     }
                     ?>
